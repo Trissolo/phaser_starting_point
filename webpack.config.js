@@ -1,5 +1,9 @@
 const path = require('path');
-//const webpack = require('webpack');
+const webpack = require('webpack');
+/*
+var definePlugin = new webpack.DefinePlugin({
+  __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false'))
+});*/
 
 module.exports = {
 
@@ -55,6 +59,29 @@ module.exports = {
 		  }
 		]
 	},
+
+	/**
+	*
+	* Plugins
+	*
+	*/
+	plugins: [
+		//definePlugin
+	new webpack.optimize.UglifyJsPlugin({
+      drop_console: true,
+      passes: 2,
+      ecma: 6,
+      minimize: true,
+      mangle: {
+      toplevel: true,
+      builtins: true
+      },
+      output: {
+      	beautify: false,
+        comments: false
+      }
+    })
+	]
 
 };
 

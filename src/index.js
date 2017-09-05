@@ -4,9 +4,17 @@
  * The order matters since Phaser needs them available before it is imported.
  */
 
+
+	//Remove comment before running:
+	// $ npm start
+	//Comment before running
+	// $ npm run build
+/*
 import PIXI from 'expose-loader?PIXI!phaser-ce/build/custom/pixi.js';
 import p2 from 'expose-loader?p2!phaser-ce/build/custom/p2.js';
 import Phaser from 'expose-loader?Phaser!phaser-ce/build/custom/phaser-split.js';
+*/
+
 
 /**
  * Create a new Phaser game instance.
@@ -30,8 +38,11 @@ game.stage.backgroundColor = '#aaa'
 	let qq = game.add.text(0, 0, `a= ${a}, b= ${b}`);
 	[a, b] = [b, a];
 	qq.text +=`\n\n ...a= ${a}, b= ${b}, nè!`
-	//qq.text += "a= "+a+", b="+b;
 	console.log(qq, qq.text, "a:",a, "b:",b);
+
+	let func = require('./test');
+	console.log(func(7));
+
 };
   
 function update() {
