@@ -29,7 +29,7 @@ game.stage.backgroundColor = '#aaa'
 
 	let qq = game.add.text(0, 0, `a= ${a}, b= ${b}`);
 	[a, b] = [b, a];
-	qq.text +=`\n ora...\n ...a= ${a}, b= ${b}`
+	qq.text +=`\n\n ...a= ${a}, b= ${b}, nè!`
 	//qq.text += "a= "+a+", b="+b;
 	console.log(qq, qq.text, "a:",a, "b:",b);
 };
