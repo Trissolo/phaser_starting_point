@@ -24,7 +24,27 @@ module.exports = {
     contentBase: path.join(__dirname, 'public'),
     port: 8000,
 	open: true
-  }
+  },
 
+	/**
+	*
+	* TEST babel
+	* 
+	*/
+	module: {
+  rules: [
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+			include: path.resolve(__dirname, "public/assets"),
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['env']
+        }
+      }
+    }
+  ]
+}
 };
 

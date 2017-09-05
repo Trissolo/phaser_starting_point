@@ -20,8 +20,18 @@ function preload() {
 }
 
 function create() {
+game.stage.backgroundColor = '#aaa'
   this.logo = game.add.sprite(game.world.centerX, game.world.centerY, 'logo');
   this.logo.anchor.setTo(0.5, 0.5);
+
+	let a = 1;
+	let b = 2;
+
+	let qq = game.add.text(0, 0, `a= ${a}, b= ${b}`);
+	[a, b] = [b, a];
+	qq.text +=`\n ora...\n ...a= ${a}, b= ${b}`
+	//qq.text += "a= "+a+", b="+b;
+	console.log(qq, qq.text, "a:",a, "b:",b);
 };
   
 function update() {
